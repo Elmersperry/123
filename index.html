@@ -29,6 +29,10 @@
         <p><button id="countBtn" onclick="countPlus()">Увеличение значения счётчика.</button></p>
         <p id="number2">Результат.</p>
         <p><button id="styleChange" onclick="Ten()">Изменить стиль элемента.</button></p>
+        <p class="button">button 1</p>
+        <p class="button">button 2</p>
+        <p class="button">button 3</p>
+        <button onclick="Eleven()">Изменить цвет элементов с классом button.</button>
     </body>
     <script>
         // 1.
@@ -96,5 +100,15 @@
         function Ten() {
             let rrr = document.querySelector("#styleChange");
             rrr.style.color = "blue";
+        };
+
+        // 11.
+
+        function Eleven() {
+            let a = document.querySelectorAll(".button");
+            for (let i = 0; i < a.length; i++) {
+                let b = a[i];
+                b.style.color = "pink";
+            }
         };
     </script>
