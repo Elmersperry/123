@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title style="color: red;">Главная страница</title>
+    </head>
+    <body>
+        <header id="header1">Нажмите, чтобы поменять текст.</header>
+        <p class="description" onclick="colorDesc()">Description</p>
+        <p><input id="input1" type="text"  placeholder="Введите текст"/></p>
+        <p><button id="button1"></button></p>
+        <p id="p1">Ваш текст.</p>
+        <p><button id="button2">Текст кнопки должен измениться.</button></p>
+        <p class="Pax" ondblclick="PaxRomana()">Дважды нажать, чтобы добавить класс.</p>
+        <p><button id="button3" onclick="msgValue()">Шестое задание.</button></p>
+        <p id="message"></p>
+        <details>
+        <summary class="ol_1">Страны Бенелюкс:</summary>    
+        <ol>
+            <li class="ol_1">Бельгия.</li>
+            <li class="ol_1">Нидерланды.</li>
+            <li class="ol_1">Люксембург.</li>
+        </ol>
+        </details>
+        <button id="button4" onclick="colorCh()">Поменять цвет фона элементов списка.</button>
+        <p><img  style="height: 250px; width: 250px;"  id ="img_1" src="marvel_sub3-700x700.jpg"></p>
+        <button id="imageCh">Поменять картинку.</button>
+        <button id="imageCh2">Поменять картинку обратно.</button>
+        <p><input type="number" id="number1" placeholder="Введите число"></p>
+        <p><button id="countBtn" onclick="countPlus()">Увеличение значения счётчика.</button></p>
+        <p id="number2">Результат.</p>
+        <p><button id="styleChange" onclick="Ten()">Изменить стиль элемента.</button></p>
+        <p class="button">button 1</p>
+        <p class="button">button 2</p>
+        <p class="button">button 3</p>
+        <button onclick="Eleven()">Изменить цвет элементов с классом button.</button>
+    </body>
+    <script>
+        // 1.
+
+        document.querySelector("#header1").addEventListener("click", () => {
+            document.querySelector("#header1").innerText = "Текст поменялся.";
+        });
+
+        // 2.
+        
+        function colorDesc () {
+            let divCont = document.querySelector(".description");
+            divCont.style.color = "red";
+        };
+        
+        // 3.
+        document.querySelector("#button1").addEventListener("click", () => {
+            let a = document.querySelector("#input1").value;
+            document.querySelector("#p1").innerText = a;      
+        });
+
+        // 4.
+
+        document.querySelector("#button2").addEventListener("click", () => {
+            document.querySelector("#button2").innerText = "Текст кнопки изменился.";
+        });
+
+        // 5.
+
+        function PaxRomana() {
+            let a = document.querySelector(".Pax");
+            a.classList.add("Romana");
+        };
+
+        // 6.
+
+        function msgValue() {
+            document.getElementById("message").innerText = "Ваше сообщение.";  
+        };
+
+        // 7.
+
+        function colorCh() {
+            allElements = document.querySelectorAll(".ol_1");
+            for (let i = 0; i < allElements.length; i++) {
+                let ttt = allElements[i];
+                ttt.style.backgroundColor = "green";
+            };
+        };
+        
+        // 8.
+
+        document.getElementById("imageCh").addEventListener("click", () => {
+            document.getElementById("img_1").src = "OIP.jpg";
+        });
+        document.getElementById("imageCh2").addEventListener("click", () => {
+            document.getElementById("img_1").src = "marvel_sub3-700x700.jpg";
+        });
+         
+        // 9.
+
+        function countPlus() {
+            let numb = Number((document.getElementById("number1").value));
+            let big = numb + 1;
+            document.getElementById("number2").innerText = big;
+        };
+
+        // 10.
+
+        function Ten() {
+            let rrr = document.querySelector("#styleChange");
+            rrr.style.color = "blue";
+        };
+
+        // 11.
+
+        function Eleven() {
+            let a = document.querySelectorAll(".button");
+            for (let i = 0; i < a.length; i++) {
+                let b = a[i];
+                b.style.color = "pink";
+            }
+        };
+    </script>
